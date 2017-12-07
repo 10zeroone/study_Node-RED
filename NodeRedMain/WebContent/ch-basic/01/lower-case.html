@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<!--HTML문서는 크게 3부분으로 구성되어 있습니다. 
+노드를 객체형태로 등록하는 부분, 편집창의 모양을 정의하는 부분, 도움말을 정의하는 부분으로 되어 있습니다.   -->
+</head>
+<body>
+<!--노드를 객체형태로 등록하는 부분  -->
+<script type="text/javascript">
+    RED.nodes.registerType('lower-case',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"lower-case";
+        }
+    });
+    
+
+</script>
+
+<!-- 편집창의 모양을 정의하는 부분 -->
+<script type="text/x-red" data-template-name="lower-case">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<!-- 도움말을 정의하는 부분 -->
+<script type="text/x-red" data-help-name="lower-case">
+    <p>A simple node that converts the message payloads into all lower-case characters</p>
+</script>
+</body>
+</html>
